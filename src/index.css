@@ -1,0 +1,51 @@
+Nav.link {
+  color: yellow;
+} 
+
+   /* @media when the width of the web page is 576+ APPLY NEW STYLE */
+@media (min-width: 576px) {
+  .small.video-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 650px) {
+  .smMd.video-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) { 
+  .medium.video-text {
+      font-size: 1.7rem;
+    }
+ }
+
+ @media (min-width: 850px) { 
+  .mdLg.video-text {
+      font-size: 1.8rem;
+    }
+ }
+
+ @media (min-width: 894px) { 
+  .mdMdLg.video-text {
+      font-size: 1.9em;
+    }
+ }
+
+ @media (min-width: 965px) { 
+  .large.video-text {
+      font-size: 2rem;
+    }
+ }
+
+/* default css styling  -- baseline for the about page*/
+.video-text {
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    padding: 60px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
