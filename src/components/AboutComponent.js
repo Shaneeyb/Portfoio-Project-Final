@@ -20,7 +20,7 @@ function About() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div class="center">
+        <div className="center">
           <Fade bottom>
             <h1
               style={{
@@ -28,7 +28,7 @@ function About() {
                 color: "white",
               }}
             >
-              About{" "}
+              About
             </h1>
           </Fade>
         </div>

@@ -38,6 +38,37 @@ Nav.link {
       font-size: 2rem;
     }
  }
+ @media (min-width: 1367px) { 
+  .large.video-text {
+      font-size: 2.1rem;
+    }
+ }
+ @media (min-width: 1426px) { 
+  .large.video-text {
+      font-size: 2.2rem;
+    }
+ }
+ @media (min-width: 1507px) { 
+  .large.video-text {
+      font-size: 2.25rem;
+    }
+ }
+ @media (min-width: 1538px) { 
+  .large.video-text {
+      font-size: 2.26rem;
+    }
+ }
+ @media (min-width: 1625px) { 
+  .large.video-text {
+      font-size: 2.35rem;
+    }
+ }
+ @media (min-width: 1683px) { 
+  .large.video-text {
+      font-size: 2.4rem;
+    }
+ }
+
 
 /* default css styling  -- baseline for the about page*/
 .video-text {

@@ -12,7 +12,7 @@ return (
 		width: "100%",
   		minHeight : '100vh',
 		minWidth: "100vw",
-		zIndex: "-2",
+		zIndex: "-10",
 		overflowX: "hidden"
 	}}>
 			<Main />

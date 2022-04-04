@@ -4,9 +4,18 @@ import BigBlueCircle from "../Img/BigBlueCircle.png";
 import OrangeSmTriangle from "../Img/OrangeSmTriangle.png";
 import OrangeBigSquare from "../Img/OrangeBigSqaure.png";
 import Portrait from "../Img/Shane_Together.png";
+import OceanBG from "../Img/Shane_OceanOnly.png";
+import SoloPic from "../Img/Shane_ShaneOnly.png"
+
+function handleMouseOver(e) {
+  console.log(e);
+}
 
 function Home() {
+
+  
   return (
+    
     <div
       style={{
         position: "relative",
@@ -24,7 +33,7 @@ function Home() {
           style={{
             position: "relative",
             width: "100vw",
-            height: "100vh",
+            height:"100vh",
           }}
         >
           <img
@@ -34,7 +43,9 @@ function Home() {
               position: "absolute",
               top: "60px",
               left: "10px",
+              zIndex: "-1"
             }}
+            onMouseOver={handleMouseOver}
           />
 
           <img
@@ -72,75 +83,20 @@ function Home() {
 
       {/* Position: Absolute is positioned Relative to the nearest PARENT*/}
       {/* Position: Relative is positioned Relative to its normal position */}
-      {/*
-  <div
-    style={{
-      padding: "40px",
-      width: "100vw",
-      zIndex: "2",
-    }}
-  >
-    <div
-      className="container"
-      style={{
-        top: "50%",
-        zIndex: "1",
-      }}
-    >
-      <div
-        className="row"
-        style={{
-          display: "flex",
-          position: "relative",
-          border: "green 5px solid",
-        }}
-      >
-        <div className="col-sm-8">
-          <img
-            src="/Images/Img.JPG"
-            style={{
-              width: "100%",
-              position: "absolute",
-              zIndex: "1",
-            }}
-          />
-          <img
-            src={OrangeBigSquare}
-            style={{
-              width: "100%",
-              position: "absolute",
-              zIndex: "0",
-            }}
-          />
-        </div>
-        <div
-          className="col-sm-4"
-          style={{
-            alignItems: "center",
-            display: "flex",
-            position: "absolute",
-            zIndex: "10",
-            border: "blue 1px solid",
-          }}
-        >
-          <h1>Hi, i'm Shane and sometimes I do things.</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  */}
+      
       <div className="container">
         <div className="row"style={{
           height: "100vh",
           alignItems: "center"
         }}>
           <div
-            className="col-sm-8">
+            className="col-sm-6">
             <div
               style={{
                 backgroundColor: "FBAB7E",
                 backgroundImage: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
                 width: "100%",
+                zIndex: "9"
               }}
             >
               <img
@@ -154,11 +110,12 @@ function Home() {
                   left: "10px",
                 }}
               />
+             
             </div>
           </div>
 
           <div
-            className="col-sm-4" style={{fontSize: "3.8rem"}}>
+            className="col-sm-6" style={{fontSize: "3.8rem"}}>
             Hi, i'm Shane and sometimes I do things.
           </div>
         </div>

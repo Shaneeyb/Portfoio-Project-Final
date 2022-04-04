@@ -25,7 +25,7 @@ function RecentWork() {
       }}>
 
       <Fade bottom>
-      <div class="center">
+      <div className="center">
         <h1 style={{
           opacity: "100%",
           color: "white"
@@ -64,7 +64,14 @@ function RecentWork() {
           <Fade right>
           <img
             className="col"
-            src={KMPhone}/>
+            src={KMPhone}
+            style={{
+              //height not working
+              height: "60%",
+              width: "60%"
+            }}
+            />
+            
           </Fade>
         </div>
       </div>
@@ -83,7 +90,7 @@ function RecentWork() {
             src={Nucamp}
             style={{
               width: "80vh",
-              padding: "40px",
+              padding: "20px",
             }}
           />
           </Fade>
