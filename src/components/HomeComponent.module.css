@@ -1,0 +1,15 @@
+.portrait {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+}
+
+.solo {
+  width: 100%;
+  position: absolute;
+  z-index: 11;
+   top: 10px;
+  left: 10px;
+}

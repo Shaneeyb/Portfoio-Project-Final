@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import Footer from "./FooterComponent";
@@ -16,7 +15,7 @@ function Main() {
       <div>    
         <NavbarComponent />
         <Home />
-        <RecentWork />
+        <RecentWork/>
         <About />
         <Testimony />
         <Contact />

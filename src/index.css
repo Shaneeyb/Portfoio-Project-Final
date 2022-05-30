@@ -1,8 +1,20 @@
 Nav.link {
   color: yellow;
-} 
+}
 
-   /* @media when the width of the web page is 576+ APPLY NEW STYLE */
+/* @media when the width of the web page is 576+ APPLY NEW STYLE */
+
+
+@media (min-width: 350px) {
+  .xsmall.video-text {
+    font-size: .87rem;
+  }
+}
+@media (min-width: 389px) {
+  .xsmall.video-text {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 576px) {
   .small.video-text {
     font-size: 1.5rem;
@@ -15,68 +27,144 @@ Nav.link {
   }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .medium.video-text {
-      font-size: 1.7rem;
-    }
- }
+    font-size: 1.7rem;
+  }
+}
 
- @media (min-width: 850px) { 
+/*  why isnt this working???  */
+@media (min-width: 800px) {
+  .midMdLg.video-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 850px) {
   .mdLg.video-text {
-      font-size: 1.8rem;
-    }
- }
+    font-size: 1.8rem;
+  }
+}
 
- @media (min-width: 894px) { 
+@media (min-width: 894px) {
   .mdMdLg.video-text {
-      font-size: 1.9em;
-    }
- }
+    font-size: 1.9em;
+  }
+}
 
- @media (min-width: 965px) { 
+@media (min-width: 965px) {
   .large.video-text {
-      font-size: 2rem;
-    }
- }
- @media (min-width: 1367px) { 
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1367px) {
   .large.video-text {
-      font-size: 2.1rem;
-    }
- }
- @media (min-width: 1426px) { 
+    font-size: 2.1rem;
+  }
+}
+@media (min-width: 1426px) {
   .large.video-text {
-      font-size: 2.2rem;
-    }
- }
- @media (min-width: 1507px) { 
+    font-size: 2.2rem;
+  }
+}
+@media (min-width: 1507px) {
   .large.video-text {
-      font-size: 2.25rem;
-    }
- }
- @media (min-width: 1538px) { 
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1538px) {
   .large.video-text {
-      font-size: 2.26rem;
-    }
- }
- @media (min-width: 1625px) { 
+    font-size: 2.26rem;
+  }
+}
+@media (min-width: 1625px) {
   .large.video-text {
-      font-size: 2.35rem;
-    }
- }
- @media (min-width: 1683px) { 
+    font-size: 2.35rem;
+  }
+}
+@media (min-width: 1683px) {
   .large.video-text {
-      font-size: 2.4rem;
-    }
- }
-
+    font-size: 2.4rem;
+  }
+}
 
 /* default css styling  -- baseline for the about page*/
 .video-text {
-    color: white;
-    position: absolute;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding: 60px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/*  why isnt this first one working???  */
+@media (min-width: 350px) {
+  .text {
+    font-size: 1rem;
     text-align: center;
-    top: 0;
-    padding: 60px;
-    font-weight: bold;
-    font-size: 1.3rem;
+    align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .text {
+    text-align: center;
+    font-size: 3rem;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .text {
+    font-size: 2.3rem;
+    text-align: center;
+    align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .text {
+    font-size: 3.5rem;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.input::placeholder {
+  color: rgb(176, 176, 176);
+}
+
+.parallaxImg {
+  background-attachment: fixed;
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  z-index: 1;
+  opacity: 90;
+  background-image: no-repeat;
+}
+
+.videoStyle {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: relative;
+  pointer-events: none;
+}
+
+.testimony {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+@media (width: 768px) {
+  .nav {
+       visibility: hidden;
+   }
 }

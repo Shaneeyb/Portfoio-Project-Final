@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Offcanvas, Container } from "react-bootstrap";
+import { Navbar, Nav, Offcanvas } from "react-bootstrap";
 
 function NavbarComponent() {
   return (
@@ -10,6 +10,9 @@ function NavbarComponent() {
       }}
     >
       <Navbar
+        collapseOnSelect
+        defaultCollapsed
+        expand="sm"
         bg="#FFFAF3"
         variant="light"
         style={{
@@ -17,18 +20,28 @@ function NavbarComponent() {
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
-          padding: "0 30px 0 30px"
+          padding: "0 30px 0 30px",
+          top: "20px"
         }}
       >
         <div>
           <Navbar.Brand href="/">Shane Burke</Navbar.Brand>
         </div>
-        <Nav>
-          <Nav.Link href="#recent">Recent Work</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#testimony">Testimonies</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
-        </Nav>
+        <Navbar.Offcanvas
+          id="responsive-navbar-nav"
+          style={{
+            zIndex: "100000",
+            textAlign: "right",
+            padding: "20px",
+          }}
+        >
+          <Nav>
+            <Nav.Link href="#recent">Recent Work</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#testimony">Testimonies</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Offcanvas>
       </Navbar>
     </div>
   );

@@ -1,36 +1,33 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import React, { useEffect } from "react";
 import Beach from "../Img/Beach.jpg";
-import Video from "../Img/WebSiteDrone3.mov";
+import Video from "../Img/WebSiteDroneFinal.mp4";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function About() {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
+
   return (
     <div id="about">
       <div
+        className="parallaxImg"
         style={{
-          backgroundAttachment: "fixed",
           backgroundImage: "url(" + Beach + ")",
-          display: "flex",
-          objectFit: "cover",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "25vh",
-          opacity: "80%",
-          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="center">
-          <Fade bottom>
-            <h1
-              style={{
-                opacity: "100%",
-                color: "white",
-              }}
-            >
-              About
-            </h1>
-          </Fade>
+        <div className="center" data-aos="fade">
+          <h1
+            style={{
+              opacity: "100%",
+              color: "white",
+            }}
+          >
+            About
+          </h1>
         </div>
       </div>
 
@@ -44,21 +41,20 @@ function About() {
           loop
           autoPlay
           muted
+          playsinline
           id="video"
-          style={{
-            height: "100vh",
-            width: "100vw",
-            objectFit: "cover",
-            position: "relative",
-            pointerEvents: "none",
-          }}
+          className="videoStyle"
         >
           <source src={Video} type="video/mp4" />
         </video>
-        <div className="video-text large  mdLg mdMdLg medium smMd small" style={{
-          color: "#FFFAF3"
-        }}>
-        <Fade bottom>
+        <div
+          className="video-text large  mdLg midMdLg mdMdLg medium smMd small xsmall"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          style={{
+            color: "#FFFAF3",
+          }}
+        >
           <p>
             Aloha, I’m a front-end developer located on the island of Oahu,
             Hawaii. I have a serious passion for technology and learning all the
@@ -66,23 +62,23 @@ function About() {
           </p>
           <br />
           <p>
-            When i’m not tinkering with the latest gadget, you can find me
-            surfing Hawaii's waves, on a beach volleyball court or vacationing
-            at a ski resort breaking another collar bone.
+            When I’m not tinkering with the latest tech gadget, you can find me
+            surfing at Waikiki, competing on a beach volleyball court, or
+            testing my limits (sometimes a little too much) at a California ski
+            resort.
           </p>
           <br />
           <p>
-            Other than sports and technology, I am very much a family person and
-            faith oriented. Both keep me grounded and make me want to be the
-            best version of myself.
+            Along with sports and technology, more core values relate to my
+            family and my faith. Both keep me grounded and continue to shape me
+            into the best version of myself.
           </p>
           <br />
           <p>
-            Overall, im trying to meet like-minded people who can mentor me to
-            make me a stronger Web Developer, a smarter employee and a more
-            wholesome and selfless person in general.
+            My current goal is to meet smart, passionate people to learn from in
+            the web development space while continuing to grow my business and
+            personal skills. Want to work together?
           </p>
-          </Fade>
         </div>
       </div>
     </div>

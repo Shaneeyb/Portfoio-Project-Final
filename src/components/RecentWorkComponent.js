@@ -1,116 +1,125 @@
-import React from "react";
-import Nucamp from "../Img/NuCamp_Macbook.png"
-import KMPhone from "../Img/KMPhone.png"
+import React, { useEffect } from "react";
+import "../work.scss";
+import { useState } from "react";
+import Nucamp from "../Img/NuCamp_Macbook.png";
+import KMPhone from "../Img/KMPhone.png";
 import water from "../Img/water.avif";
-import { Fade } from "react-reveal";
-
-
+import arrow from "../Img/arrow.jpeg";
+import Aos from "aos";
+import "aos/dist/aos.css"
 
 function RecentWork() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const data = [
+    {
+      id: "1",
+      icon: KMPhone,
+      title: "Kingdom Man",
+      desc: "Kingdom Man is my latest React project to show all the details of Inspire Waikele’s event, Kingdom Man. It is a mobile app that lets you sign up, gives you details and connect with Inspire team.",
+      alt: "IPhone image of the Kingdom Man app",
+    },
+
+    {
+      id: "2",
+      icon: Nucamp,
+      title: "Nucampsite",
+      desc: "Nucampsite is a camping website and app that was designed by the Nucamp Bootcamp. It features front end with React.js and Redux with back end using Node.js and mongoDB.",
+      alt: "Computer Image of Nucampsite",
+    },
+  ];
+
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      let temp;
+      if (currentSlide > 0) {
+        temp = currentSlide - 1;
+      } else {
+        temp = 1;
+      }
+      setCurrentSlide(temp);
+    } else {
+      let temp;
+      if (currentSlide < data.length - 1) {
+        temp = currentSlide + 1;
+      } else {
+        temp = 0;
+      }
+      setCurrentSlide(temp);
+    }
+  };
+
+  //i have an array of objects
+  //want to display the first Object
+  //i want to switch to the 2nd id if i click a certain thing
+
+  useEffect(() => {
+    Aos.init({duration: 1000})
+  }, []);
+
+
+
   return (
     <div id="recent">
-   
-      <div className="parallaxImg" style={{
-        backgroundAttachment: "fixed",
-        backgroundImage: 'url(' + water + ')',
-        display: "flex",
-              objectFit: "cover",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              height: "25vh",
-              zIndex: "1",
-              opacity: "90%",
-              backgroundRepeat: "no-repeat",
-      }}>
-
-      <Fade bottom>
-      <div className="center">
-        <h1 style={{
-          opacity: "100%",
-          color: "white"
-        }}>My Recent Work </h1>
-      </div>
-      </Fade>
-    </div>
-      
-
-      <div className="container" style={{
-        padding: "40px"
-    }}>
-        <div className="row" style={{
-          display: "flex",
-          alignItems: "center"
-        }}>
-          <div className="col">
-            <div
-              className="col"
-              style={{
-                textAlign: "center",
-                padding: "40px",
-              }}
-            >
-              <Fade left>
-              <h1>Kingdom Man</h1>
-              <p>
-                Kingdom Man is my latest React project to show all the details
-                of Inspire Waikele’s event, Kingdom Man. It is a mobile app that
-                lets you sign up, gives you details and connect with Inspires
-                team.
-              </p>
-              </Fade>
-            </div>
-          </div>
-          <Fade right>
-          <img
-            className="col"
-            src={KMPhone}
+      <div
+        className="parallaxImg"
+        style={{
+          backgroundImage: "url(" + water + ")",
+        }}
+      >
+        <div className="center" data-aos="fade">
+          <h1
             style={{
-              //height not working
-              height: "60%",
-              width: "60%"
+              opacity: "100%",
+              color: "white",
             }}
-            />
-            
-          </Fade>
+          >
+            My Recent Work
+          </h1>
         </div>
       </div>
 
-      <br />
-
-      <div className="container">
-        <div className="row" style={{
-          display: "flex",
-          alignItems: "center"
-        }}>
-          <div className="col"></div>
-          <Fade left>
-          <img
-            className="col"
-            src={Nucamp}
-            style={{
-              width: "80vh",
-              padding: "20px",
-            }}
-          />
-          </Fade>
-
+      <div>
+        <div className="works" id="works">
           <div
-            className="col"
+            className="slider"
             style={{
-              textAlign: "center",
-              padding: "40px",
+              transform: `translateX(-${currentSlide * 100}vw)`,
             }}
           >
-            <Fade right>
-            <h1>Nucampsite</h1>
-            <p>
-              Nucampsite is a campsite website and app that was designed by the
-              Nucamp Bootcamp. It features fron end with React.js and Redux as
-              well as back end with Node.js and mongoDB.
-            </p>
-            </Fade>
+            {/* map is the same as {data[0].icon} ... etc */}
+            {data.map(function (item, index) {
+              return (
+                <div className="sliderContainer" key={index} data-aos="fade-up">
+                  <div className="item row">
+                    <div className="left col-md-6">
+                      <h2>{item.title}</h2>
+                      <p>{item.desc}</p>
+                    </div>
+                    <div className="right col-md-6">
+                      <img src={item.icon} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+          <img
+            src={arrow}
+            className="arrow left"
+            alt="arrowL"
+            onClick={() => handleClick("left")}
+          />
+          {/*function onClick() {
+              return (
+                handleClick("left")
+              )
+            } */}
+          <img
+            src={arrow}
+            className="arrow right"
+            alt="arrowR"
+            onClick={() => handleClick()}
+          />
         </div>
       </div>
     </div>
@@ -118,23 +127,3 @@ function RecentWork() {
 }
 export default RecentWork;
 
-
-/*
-   <img src={water} height="300px" opacity=".5">
-            <h1 style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "10vh",
-            }}>My Recent Work</h1>
-        </img>
-
-
-        style={{
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            display: "flex",
-            
-          }}
-*/
