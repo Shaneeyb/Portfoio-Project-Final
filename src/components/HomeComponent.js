@@ -2,15 +2,12 @@ import React from "react";
 import BlueSmTriangle from "../Img/BlueSmTriangle.png";
 import BigBlueCircle from "../Img/BigBlueCircle.png";
 import OrangeSmTriangle from "../Img/OrangeSmTriangle.png";
-import Portrait from "../Img/Shane_Together.png";
 import OceanBG from "../Img/Shane_OceanOnly.png";
 import SoloPic from "../Img/Shane_ShaneOnly.png";
 import styles from "./HomeComponent.module.css";
 import { motion } from "framer-motion";
 
-function template({ rotate, x }) {
-  return `rotate(${rotate}) translateX(${x})`;
-}
+
 
 function Home() {
   return (

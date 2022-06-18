@@ -13,39 +13,48 @@ useEffect(() =>{
   return (
     <div id="contact" data-aos="fade-right">
       <Form
+        data-netlify="true"
+        method="post"
+        name="contact form"
+        onSubmit="submit"
         style={{
           padding: "40px",
         }}
       >
+        <input type="hidden" name="form-name" value="contact" />
+
         <Form.Group className="mb-6" controlId="contactForm">
           <Form.Label>Name</Form.Label>
           <Form.Control
-            type="email"
+          name="name"
+            type="text"
             className="input mb-3 p-2"
             placeholder="Obi Wan Kenobi"
             style={{
               color: "#FFFAF3",
               backgroundColor: "#454545",
-              border: "black 1px solid",
+              border: "black 1px solid"
             }}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="contactForm">
           <Form.Label>Email address</Form.Label>
           <Form.Control
+          name="email"
             type="email"
             className="input mb-3 p-2"
             placeholder="ObiWanKenobi@TheJediCouncel.com"
             style={{
               color: "#FFFAF3",
               backgroundColor: "#454545",
-              border: "black 1px solid",
+              border: "black 1px solid"
             }}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="contactForm">
           <Form.Label>Comments</Form.Label>
           <Form.Control
+          name="message"
             as="textarea"
             className="input"
             rows={3}
@@ -53,7 +62,7 @@ useEffect(() =>{
             style={{
               color: "#FFFAF3",
               backgroundColor: "#454545",
-              border: "black 1px solid",
+              border: "black 1px solid"
             }}
           />
         </Form.Group>
